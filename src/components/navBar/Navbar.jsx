@@ -8,12 +8,12 @@ const Navbar = () => {
         <p className="text-xl font-bold">FocusFy</p>
       </div>
       <div className="flex gap-8 max-sm:gap-2">
-        <button className="flex items-center gap-1 font-medium bg-gray-500 rounded-lg  px-5 py-2  max-sm:px-3">
-          <span class="material-symbols-outlined">summarize</span>
+        <button className="flex items-center gap-1 font-medium bg-gray-500 rounded-lg  px-5 py-2  max-sm:px-3 text-white">
+          <span className="material-symbols-outlined">summarize</span>
           <span className="max-sm:hidden ">report</span>
         </button>
-        <button className="flex items-center gap-1 font-medium  bg-gray-500 rounded-lg  px-3 py-2  ">
-          <span class="material-symbols-outlined">tune</span>
+        <button className="flex items-center gap-1 font-medium  bg-gray-500 rounded-lg  px-3 py-2 text-white ">
+          <span className="material-symbols-outlined">tune</span>
           <span className="max-sm:hidden">settings</span>
         </button>
       </div>

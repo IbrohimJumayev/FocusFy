@@ -10,18 +10,22 @@ import Break from "./Break";
 
 const Timer = () => {
   return (
-    <div>
+    <div className="bg-slate-600 mt-7 rounded-lg text-white font-bold max-w-lg m-auto mx-3">
       <Router>
-        <div>
-          <NavLink to="/">Pomdoro</NavLink>
-          <NavLink to={"/break"}>Break</NavLink>
+        <div className="flex text-xl pt-5 px-3">
+          <NavLink className="flex-1 text-center py-3" to="/">
+            Pomodoro
+          </NavLink>
+          <NavLink className="flex-1 text-center py-3" to={"/break"}>
+            Break
+          </NavLink>
         </div>
 
         <Routes>
           <Route path="/" element={<StartTimer />} />
           <Route path="/break" element={<Break />} />
         </Routes>
-        <div>topto</div>
+        <br />
       </Router>
     </div>
   );
