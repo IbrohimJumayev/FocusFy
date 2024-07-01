@@ -17,6 +17,12 @@ button:hover{
 
 body.dark-mode {
     background-color: black;
+    color: white;
+    
+}
+
+body.dark-mode input {
+    background-color: transparent;
 }
 
 .active{
@@ -27,8 +33,3 @@ body.dark-mode {
     opacity: 0.8;
 }
 
-.pointer-events-none {
-    pointer-events: none;
-    opacity: 0.5;
-    /* Optional: to visually indicate the link is disabled */
-}
