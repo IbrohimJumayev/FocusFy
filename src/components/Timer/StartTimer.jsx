@@ -2,8 +2,16 @@ import React, { useEffect, useContext, useState, useRef } from "react";
 import { timerContext } from "../../pages/HomePage";
 
 const StartTimer = () => {
-  const { timer, setTimer, timerOn, setTimerOn, breaktime, setBreakTime } =
-    useContext(timerContext);
+  const {
+    timer,
+    setTimer,
+    timerOn,
+    setTimerOn,
+    breaktime,
+    setBreakTime,
+    isDisabled,
+    setIsDisabled,
+  } = useContext(timerContext);
   const intervalRef = useRef(null);
 
   useEffect(() => {
@@ -18,12 +26,14 @@ const StartTimer = () => {
           }
         });
       }, 1000);
+      setIsDisabled(true);
     } else {
       clearInterval(intervalRef.current);
+      setIsDisabled(false);
     }
 
     return () => clearInterval(intervalRef.current);
-  }, [timerOn, setTimer]);
+  }, [timerOn, setTimer, setIsDisabled]);
 
   useEffect(() => {
     const totalSeconds = Math.floor(timer / 1000);
@@ -97,3 +107,5 @@ const StartTimer = () => {
 };
 
 export default StartTimer;
+
+
