@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const AddingTasks = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos")) : []);
   const [newTask, setNewTask] = useState("");
-  const [doneTodos, setDoneTodos] = useState([]);
+  const [doneTodos, setDoneTodos] = useState(localStorage.getItem("doneTodos") ? JSON.parse(localStorage.getItem("doneTodos")) : []);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
+  useEffect(() => {
+    localStorage.setItem("doneTodos", JSON.stringify(doneTodos));
+  }, [doneTodos]);
 
   const handleInputChange = (e) => {
     setNewTask(e.target.value);
@@ -85,14 +93,18 @@ const AddingTasks = () => {
             </li>
           ))}
         </ul>
-        <h1 className="font-black mb-5 mt-5 text-blue-900">
+        <h1 className="font-black mb-5 mt-5 text-green-600">
           Done tasks: {doneTodos.length}
         </h1>
         <ul className="mt-5">
           {doneTodos.map((d) => (
             <li className="flex justify-between py-1" key={d.id}>
-              <p className="text-xl font-bold">{d.taskName}</p>
-              <div>
+              <p className="text-xl font-bold line-through">{d.taskName}</p>
+              <div className="flex gap-3">
+                <p className="flex items-center gap-1">
+                  <strong className="text-xl text-blue-600">n time</strong>
+                  <span class="material-symbols-outlined">timelapse</span>
+                </p>
                 <button onClick={() => undo(d.id)} className="active:scale-75">
                   <span className="material-symbols-outlined">undo</span>
                 </button>
