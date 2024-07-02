@@ -1,5 +1,13 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { timerContext } from "../../pages/HomePage";
+import resetSound from "../../assets/reset.mp3";
+import resumeSound from "../../assets/resume.mp3";
+import startSound from "../../assets/start.mp3";
+import pauseSound from "../../assets/pause.mp3";
+
+function playSound(props) {
+  new Audio(props).play();
+}
 
 const Break = () => {
   const { timer, setTimer, timerOn, setTimerOn, breaktime, setBreakTime } =
@@ -42,7 +50,7 @@ const Break = () => {
         {!timerOn && breaktime === 5 * 60 * 1000 && (
           <button
             className="text-3xl font-medium bg-slate-900 rounded-md px-6 py-2 flex-1"
-            onClick={() => setTimerOn(true)}
+            onClick={() => {setTimerOn(true); playSound(startSound)}}
           >
             Start
           </button>
@@ -51,7 +59,7 @@ const Break = () => {
         {timerOn && (
           <button
             className="text-3xl font-medium bg-slate-900 rounded-md px-5 py-2 flex-1"
-            onClick={() => setTimerOn(false)}
+            onClick={() => {setTimerOn(false); playSound(pauseSound)}}
           >
             Pause
           </button>
@@ -60,7 +68,7 @@ const Break = () => {
         {!timerOn && breaktime !== 5 * 60 * 1000 && (
           <button
             className="text-3xl font-medium bg-slate-900 rounded-md px-5 py-2 flex-1"
-            onClick={() => setTimerOn(true)}
+            onClick={() => {setTimerOn(true);playSound(resumeSound)}}
           >
             Resume
           </button>
@@ -69,7 +77,7 @@ const Break = () => {
         {!timerOn && breaktime < 5 * 60 * 1000 && (
           <button
             className="text-3xl font-medium bg-slate-900 rounded-md px-7 py-2 flex-1"
-            onClick={() => setBreakTime(5 * 60 * 1000)}
+            onClick={() => {setBreakTime(5 * 60 * 1000); playSound(resetSound)}}
           >
             Reset
           </button>

@@ -15,15 +15,6 @@ button:hover{
     transform: scale(0.9);
 }
 
-body.dark-mode {
-    background-color: black;
-    color: white;
-    
-}
-
-body.dark-mode input {
-    background-color: transparent;
-}
 
 .active{
     background-color: rgb(122, 126, 135);
