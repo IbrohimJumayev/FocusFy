@@ -1,6 +1,8 @@
 import React from "react";
 
+
 const Navbar = () => {
+  
   return (
     <div className="mt-10 flex justify-between max-sm:mt-2 px-5 border-b border-black pb-3">
       <div className="flex items-center gap-2">
@@ -12,7 +14,9 @@ const Navbar = () => {
           <span className="material-symbols-outlined">summarize</span>
           <span className="max-sm:hidden ">report</span>
         </button>
-        <button className="flex items-center gap-1 font-medium  bg-gray-500 rounded-lg  px-3 py-2 text-white ">
+        <button
+          className="flex items-center gap-1 font-medium  bg-gray-500 rounded-lg  px-3 py-2 text-white "
+        >
           <span className="material-symbols-outlined">tune</span>
           <span className="max-sm:hidden">settings</span>
         </button>

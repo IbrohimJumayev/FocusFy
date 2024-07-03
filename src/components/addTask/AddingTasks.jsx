@@ -7,8 +7,9 @@ import Swal from "sweetalert2";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const notifyDone = () => toast("Task was done!");
-const notifyDelete = () => toast("Task was deleted!");
+const notifyDone = () => toast("Task is done!");
+const notifyDelete = () => toast("Task is deleted!");
+
 
 const AddingTasks = () => {
   const [todos, setTodos] = useState(
@@ -22,7 +23,7 @@ const AddingTasks = () => {
       ? JSON.parse(localStorage.getItem("doneTodos"))
       : []
   );
-
+3
   function playSounds(props) {
     new Audio(props).play();
   }
