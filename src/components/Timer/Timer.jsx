@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import StartTimer from "./StartTimer";
 import Break from "./Break";
-import AddingTasks from "../addTask/AddingTasks";
 
 const Timer = () => {
   return (
@@ -28,9 +27,9 @@ const Timer = () => {
           </Routes>
         </Router>
       </div>
-      <div>
+      {/* <div>
         <AddingTasks />
-      </div>
+      </div> */}
     </>
   );
 };
