@@ -18,7 +18,7 @@ const HomePage = () => {
   const [fetchError, setFetchError] = useState("");
   const [doneTodos, setDoneTodos] = useState([]);
 
-  const api_url = "http://localhost:3000";
+  const api_url = "https://todos-server-1.onrender.com";
 
   useEffect(() => {
     async function fetchTodos() {
